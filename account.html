@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedStore | Ecommerce Website</title>
+    <!-- css style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/b7f28fb327.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" width="125px">
+            </a>
+        </div>
+        <nav>
+            <ul id="menu-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+        <a href="cart.html">
+            <img src="images/cart.png" width="30px" height="30px">
+        </a>
+        <img src="images/menu.png" class="menu-icon" onclick="handleMenu()">
+    </div>
+
+    <!-- account -->
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/image1.png">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="indicator">
+                        </div>
+
+                        <!-- login form -->
+                        <form id="loginForm">
+                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Password">
+                            <br>
+                            <input type="submit" value="Login" class="btn">
+                            <a href="">Forget password?</a>
+                        </form>
+
+                        <!-- registration form -->
+                        <form id="regiForm">
+                            <input type="text" placeholder="First name">
+                            <input type="text" placeholder="Last name">
+                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Password">
+                            <input type="text" placeholder="Retype password">
+                            <br>
+                            <input type="submit" value="Register" class="btn" style="border: 0">
+                            <a href="">Already have an account?</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for android and ios mobile phone</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our purpose is to sustainably make the pleasure and benfits of sports accessible to the many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twiteer</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+            <p class="copyright">Copyright 2024 - RedStore's Policy</p>
+        </div>
+    </div>
+
+    <!-- js for handle menu -->
+    <script>
+        const menuItems = document.getElementById('menu-items');
+        menuItems.style.maxHeight = '0px';
+        handleMenu = () => {
+            if (menuItems.style.maxHeight === '0px') {
+                menuItems.style.maxHeight = '200px';
+            }
+            else {
+                menuItems.style.maxHeight = '0px';
+            }
+        }
+    </script>
+
+    <!-- js for toggle form -->
+    <script>
+        const indicator = document.getElementById('indicator');
+        const loginForm = document.getElementById('loginForm');
+        const regiForm = document.getElementById('regiForm');
+        
+        const login = () => {
+            indicator.style.transform = 'translateX(0px)';
+            loginForm.style.transform = 'translateX(300px)'
+            regiForm.style.transform = 'translateX(300px)'
+        }
+
+        const register = () => {
+            indicator.style.transform = 'translateX(100px)';
+            loginForm.style.transform = 'translateX(0px)'
+            regiForm.style.transform = 'translateX(0px)'
+        }
+    </script>
+</body>
+
+</html>
